@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use Illuminate\Support\Facades\Gate;
 
-class HomeController extends Controller
+class SiteController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,10 +25,7 @@ class HomeController extends Controller
      */
     public function index(Post $post)
     {
-        $posts = $post->all();
-        //$posts = $post->where('user_id',auth()->user()->id)->get();
-
-        return view('home', compact('posts'));
+        return view('portal.home.index');
     }
     
     public function update ($idPost)
