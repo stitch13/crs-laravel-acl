@@ -5,6 +5,9 @@
     <p><?php echo e($post->description); ?></p>
     <br>
     <b>Author: <?php echo e($post->user->name); ?></b>
+        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('update-post', $post)): ?>
+        <a href="<?php echo e("/post/$post->id/update"); ?>">Editar</a>
+        <?php endif; ?>
     <hr>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
     <p>Nenhum post cadastrado !!!</p>
