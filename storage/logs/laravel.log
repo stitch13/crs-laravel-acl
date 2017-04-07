@@ -2649,3 +2649,23 @@ Stack trace:
 #22 /var/www/crs-lavarel-acl/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #23 /var/www/crs-lavarel-acl/server.php(21): require_once('/var/www/crs-la...')
 #24 {main}  
+[2017-04-07 14:49:48] local.ERROR: Symfony\Component\Debug\Exception\FatalThrowableError: Call to undefined method Illuminate\Auth\Access\Gate::beforee() in /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php:221
+Stack trace:
+#0 /var/www/crs-lavarel-acl/app/Providers/AuthServiceProvider.php(50): Illuminate\Support\Facades\Facade::__callStatic('beforee', Array)
+#1 [internal function]: App\Providers\AuthServiceProvider->boot()
+#2 /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#3 /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\Container\BoundMethod::Illuminate\Container\{closure}()
+#4 /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\Container\BoundMethod::callBoundMethod(Object(Illuminate\Foundation\Application), Array, Object(Closure))
+#5 /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Container/Container.php(531): Illuminate\Container\BoundMethod::call(Object(Illuminate\Foundation\Application), Array, Array, NULL)
+#6 /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(768): Illuminate\Container\Container->call(Array)
+#7 /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(751): Illuminate\Foundation\Application->bootProvider(Object(App\Providers\AuthServiceProvider))
+#8 [internal function]: Illuminate\Foundation\Application->Illuminate\Foundation\{closure}(Object(App\Providers\AuthServiceProvider), 15)
+#9 /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(752): array_walk(Array, Object(Closure))
+#10 /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/BootProviders.php(17): Illuminate\Foundation\Application->boot()
+#11 /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(208): Illuminate\Foundation\Bootstrap\BootProviders->bootstrap(Object(Illuminate\Foundation\Application))
+#12 /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(160): Illuminate\Foundation\Application->bootstrapWith(Array)
+#13 /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(144): Illuminate\Foundation\Http\Kernel->bootstrap()
+#14 /var/www/crs-lavarel-acl/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#15 /var/www/crs-lavarel-acl/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#16 /var/www/crs-lavarel-acl/server.php(21): require_once('/var/www/crs-la...')
+#17 {main}  
