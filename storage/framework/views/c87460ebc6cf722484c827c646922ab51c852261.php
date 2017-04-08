@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{{$titulo or 'Painel ACL - Curso de Laravel'}}</title>
+        <title><?php echo e(isset($titulo) ? $titulo : 'Painel ACL - Curso de Laravel'); ?></title>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -63,7 +63,7 @@
         <div class="clear"></div>
 
         <!--Content Dinâmico-->
-        @yield('content')
+        <?php echo $__env->yieldContent('content'); ?>
 
         <div class="clear"></div>
 
