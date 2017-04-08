@@ -14,46 +14,46 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
         <!--CSS-->
-        <link rel="stylesheet" href="../../assets/painel/css/acl-painel.css">
+        <link rel="stylesheet" href="../../../assets/painel/css/acl-painel.css">
 
         <!--Favicon-->
-        <link rel="icon" type="../../image/png" href="assets/painel/imgs/favicon-acl.png">>
+        <link rel="icon" type="../../../image/png" href="assets/painel/imgs/favicon-acl.png">>
     </head>
     <body>
         <div class="menu">
             <ul class="menu col-md-12">
                 <li class="col-md-2 text-center">
                     <a href="/painel">
-                        <img src="../../assets/painel/imgs/acl-branca.png" alt="acl" class="logo">
+                        <img src="../../../assets/painel/imgs/acl-branca.png" alt="acl" class="logo">
                     </a>
                 </li>
                 <li class="col-md-2 text-center">
                     <a href="/painel/users">
-                        <img src="../../assets/painel/imgs/perfil-acl.png" alt="Meu Perfil" class="img-menu">
+                        <img src="../../../assets/painel/imgs/perfil-acl.png" alt="Meu Perfil" class="img-menu">
                         <h1>Usuários</h1>
                     </a>
                 </li>
                 <li class="col-md-2 text-center">
                     <a href="/painel/posts">
-                        <img src="../../assets/painel/imgs/noticias-acl.png" alt="Estilos" class="img-menu">
+                        <img src="../../../assets/painel/imgs/noticias-acl.png" alt="Estilos" class="img-menu">
                         <h1>Posts</h1>
                     </a>
                 </li>
                 <li class="col-md-2 text-center">
                     <a href="/painel/roles">
-                        <img src="../../assets/painel/imgs/funcao-acl.png" alt="Albuns" class="img-menu">
+                        <img src="../../../assets/painel/imgs/funcao-acl.png" alt="Albuns" class="img-menu">
                         <h1>Roles</h1>
                     </a>
                 </li>
                 <li class="col-md-2 text-center">
                     <a href="/painel/permissions">
-                        <img src="../../assets/painel/imgs/permissao-acl.png" alt="Musicas" class="img-menu">
+                        <img src="../../../assets/painel/imgs/permissao-acl.png" alt="Musicas" class="img-menu">
                         <h1>Permissions</h1>
                     </a>
                 </li>
                 <li class="col-md-2 text-center">
                     <a href="/logout">
-                        <img src="../../assets/painel/imgs/sair-acl.png" alt="Sair" class="img-menu">
+                        <img src="../../../assets/painel/imgs/sair-acl.png" alt="Sair" class="img-menu">
                         <h1>Logout</h1>
                     </a>
                 </li>
