@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Painel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Permission;
+use Gate;
 
 class PermissionController extends Controller
 {
@@ -16,6 +17,10 @@ class PermissionController extends Controller
     public function index() {
         
         $permissions = $this->permission->all();
+        
+        if (Gate::denies('adm'))
+            //abort(403, 'Acesso não autorizado !');
+            return redirect()->back();
         
         return view('painel.permissions.index', compact('permissions'));
     }

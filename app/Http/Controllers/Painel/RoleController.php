@@ -17,6 +17,10 @@ class RoleController extends Controller
         
         $roles = $this->role->all();
         
+        if (Gate::denies('adm'))
+            //abort(403, 'Acesso não autorizado !');
+            return redirect()->back();
+        
         return view('painel.roles.index', compact('roles'));
     }
     
