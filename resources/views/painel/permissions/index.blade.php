@@ -27,7 +27,7 @@
         <tr>
             <th>Name</th>
             <th>Label</th>
-            <th width="100px">Ações</th>
+            <th width="150px">Ações</th>
         </tr>
 
         @forelse($permissions as $permission)
@@ -35,10 +35,13 @@
             <td>{{$permission->name}}</td>
             <td>{{$permission->label}}</td>
             <td>
-                <a href="painel/permission/{{$permission->id}}/edit" class="edit">
+                <a href="../painel/permissions/{{$permission->id}}/roles" class="permission">
+                    <i class="fa fa-unlock"></i>
+                </a>
+                <a href="painel/permissions/{{$permission->id}}/edit" class="edit">
                     <i class="fa fa-pencil-square-o"></i>
                 </a>
-                <a href="painel/permission/{{$permission->id}}/delete" class="delete">
+                <a href="painel/permissions/{{$permission->id}}/delete" class="delete">
                     <i class="fa fa-trash"></i>
                 </a>
             </td>

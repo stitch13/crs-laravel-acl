@@ -1,6 +1,4 @@
-@extends('painel.templates.template')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 
 <!--Filters and actions-->
 <div class="actions">
@@ -20,40 +18,38 @@
 
 <div class="container">
     <h1 class="title">
-        List Users
+        Listagem dos POSTS
     </h1>
 
     <table class="table table-hover">
         <tr>
-            <th>Nome</th>
-            <th>E-Mail</th>
-            <th width="150px">Ações</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th width="100px">Ações</th>
         </tr>
 
-        @forelse($users as $user)
+        <?php $__empty_1 = true; $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
         <tr>
-            <td>{{$user->name}}</td>
-            <td>{{$user->email}}</td>
+            <td><?php echo e($post->title); ?></td>
+            <td><?php echo e($post->description); ?></td>
             <td>
-                <a href="../painel/users/{{$user->id}}/roles" class="permission">
-                    <i class="fa fa-unlock"></i>
-                </a>
-                <a href="painel/user/{{$user->id}}/edit" class="edit">
+                <a href="painel/post/<?php echo e($post->id); ?>/edit" class="edit">
                     <i class="fa fa-pencil-square-o"></i>
                 </a>
-                <a href="painel/user/{{$user->id}}/delete" class="delete">
+                <a href="painel/post/<?php echo e($post->id); ?>/delete" class="delete">
                     <i class="fa fa-trash"></i>
                 </a>
             </td>
         </tr>
-        @empty
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
         <tr>
             <td colspan="90">
                 <p>Nenhum resultado!</p>
             </td>
         </tr>
-        @endforelse
+        <?php endif; ?>
     </table>
 
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('painel.templates.template', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

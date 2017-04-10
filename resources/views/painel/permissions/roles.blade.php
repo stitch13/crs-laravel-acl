@@ -20,28 +20,22 @@
 
 <div class="container">
     <h1 class="title">
-        List Users
+        Roles: <b>{{$permission->name}}</b>
     </h1>
 
     <table class="table table-hover">
         <tr>
-            <th>Nome</th>
-            <th>E-Mail</th>
-            <th width="150px">Ações</th>
+            <th>Name</th>
+            <th>Label</th>
+            <th width="100px">Ações</th>
         </tr>
 
-        @forelse($users as $user)
+        @forelse($roles as $role)
         <tr>
-            <td>{{$user->name}}</td>
-            <td>{{$user->email}}</td>
+            <td>{{$role->name}}</td>
+            <td>{{$role->label}}</td>
             <td>
-                <a href="../painel/users/{{$user->id}}/roles" class="permission">
-                    <i class="fa fa-unlock"></i>
-                </a>
-                <a href="painel/user/{{$user->id}}/edit" class="edit">
-                    <i class="fa fa-pencil-square-o"></i>
-                </a>
-                <a href="painel/user/{{$user->id}}/delete" class="delete">
+                <a href="painel/role/{{$role->id}}/delete" class="delete">
                     <i class="fa fa-trash"></i>
                 </a>
             </td>
