@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Painel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Post;
+use Gate;
 
 class PostController extends Controller {
 
@@ -15,9 +16,13 @@ class PostController extends Controller {
     }
 
     public function index() {
-        
+
         $posts = $this->post->all();
-        
+
+        if (Gate::denies('view_post'))
+            //abort(403, 'Acesso não autorizado !');
+            return redirect()->back();
+
         return view('painel.posts.index', compact('posts'));
     }
 

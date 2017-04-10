@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="../../../assets/painel/css/acl-painel.css">
 
         <!--Favicon-->
-        <link rel="icon" type="../../../image/png" href="assets/painel/imgs/favicon-acl.png">>
+        <link rel="icon" type="../../../image/png" href="assets/painel/imgs/favicon-acl.png">
     </head>
     <body>
         <div class="menu">
@@ -33,12 +33,19 @@
                         <h1>Usuários</h1>
                     </a>
                 </li>
+                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('view_post')): ?>
                 <li class="col-md-2 text-center">
                     <a href="/painel/posts">
                         <img src="../../../assets/painel/imgs/noticias-acl.png" alt="Estilos" class="img-menu">
                         <h1>Posts</h1>
                     </a>
                 </li>
+                <?php else: ?>
+                <li class="col-md-2 text-center">
+                    <img src="../../../assets/painel/imgs/noticias-acl.png" alt="Estilos" class="img-menu">
+                    <h1>Not Permission</h1>
+                </li>
+                <?php endif; ?>
                 <li class="col-md-2 text-center">
                     <a href="/painel/roles">
                         <img src="../../../assets/painel/imgs/funcao-acl.png" alt="Albuns" class="img-menu">

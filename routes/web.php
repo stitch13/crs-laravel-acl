@@ -20,5 +20,7 @@ Route::group(['prefix' => 'painel'], function (){
 });
 
 Route::auth();
+//Auth::routes();
 
 Route::get('/', 'Portal\SiteController@index');
+Route::get('/logout', 'Auth\LoginController@logout');
