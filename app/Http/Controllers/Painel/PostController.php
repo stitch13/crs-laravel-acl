@@ -13,15 +13,16 @@ class PostController extends Controller {
 
     public function __construct(Post $post) {
         $this->post = $post;
+
+        if (Gate::denies('view_post'))
+        //abort(403, 'Acesso não autorizado !');
+            return redirect()->back();
     }
 
     public function index() {
 
         $posts = $this->post->all();
 
-        if (Gate::denies('view_post'))
-            //abort(403, 'Acesso não autorizado !');
-            return redirect()->back();
 
         return view('painel.posts.index', compact('posts'));
     }

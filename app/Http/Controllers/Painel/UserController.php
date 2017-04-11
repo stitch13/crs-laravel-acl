@@ -13,15 +13,15 @@ class UserController extends Controller {
 
     public function __construct(User $user) {
         $this->user = $user;
+
+        if (Gate::denies('user'))
+        //abort(403, 'Acesso não autorizado !');
+            return redirect()->back();
     }
 
     public function index() {
 
         $users = $this->user->all();
-
-        if (Gate::denies('user'))
-        //abort(403, 'Acesso não autorizado !');
-            return redirect()->back();
 
         return view('painel.users.index', compact('users'));
     }
