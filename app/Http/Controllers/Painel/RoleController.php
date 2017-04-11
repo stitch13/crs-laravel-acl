@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Painel;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Role;
+use Gate;
 
 class RoleController extends Controller
 {
